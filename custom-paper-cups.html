@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Paper Cups | Pacific Paper Cups</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a href="index.html" class="logo" aria-label="Pacific Paper Cups home">
+        <img src="images/pacific-paper-cups-logo.png" alt="Pacific Paper Cups Logo" class="logo-image">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="index.html#products" class="nav-drop-trigger">Products</a>
+          <div class="nav-drop-menu">
+            <a href="custom-paper-cups.html">Custom Paper Cups</a>
+            <a href="to-go-boxes.html">To-Go Boxes</a>
+          </div>
+        </div>
+        <a href="#cup-pricing">Pricing</a>
+        <a href="index.html#process">Process</a>
+        <a href="cart.html" class="cart-nav-link">Cart <span class="cart-count">0</span></a>
+        <a href="index.html#contact" class="btn">Get a Quote</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Custom branded drinkware</span>
+        <h1>Custom Paper Cups</h1>
+        <p>
+          Pacific Paper Cups creates high-quality custom paper cups for coffee shops, cafés, restaurants,
+          bakeries, events, and local businesses throughout Orange County. Our cups are made locally for
+          fast turnaround times, competitive pricing, and reliable service.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#cup-pricing" class="btn">View Pricing</a>
+          <a href="#cup-builder" class="btn secondary">Build a Mockup</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="tag">
+          Made Locally
+          <span>Orange County production</span>
+        </div>
+
+        <div class="cup-stack">
+          <div class="cup"></div>
+          <div class="cup two"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cup-pricing" class="pricing-section nav-section">
+      <div class="section-inner">
+        <div class="section-title">
+          <span class="eyebrow">Cup pricing</span>
+          <h2>Simple pricing for custom paper cups</h2>
+          <p>
+            Choose a quantity that fits your business, event, café, or restaurant. For larger orders,
+            contact us directly for wholesale pricing and recurring order options.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <span class="pricing-amount">$50</span>
+            <h3>100 Cups</h3>
+            <p>Great for small events, pop-ups, sample orders, and first-time custom cup requests.</p>
+
+            <ul>
+              <li>Custom paper cups</li>
+              <li>Good starter quantity</li>
+              <li>Local pickup or delivery</li>
+            </ul>
+          </div>
+
+          <div class="pricing-card">
+            <span class="pricing-amount">$250</span>
+            <h3>500 Cups</h3>
+            <p>Ideal for cafés, restaurants, and businesses that need regular branded drinkware.</p>
+
+            <ul>
+              <li>Better bulk value</li>
+              <li>Great for daily service</li>
+              <li>Professional branded packaging</li>
+            </ul>
+          </div>
+
+          <div class="pricing-card featured-pricing">
+            <div class="popular-tag">Best Value</div>
+            <span class="pricing-amount">$350</span>
+            <h3>1000 Cups</h3>
+            <p>Best for high-volume cafés, restaurants, events, and recurring custom cup orders.</p>
+
+            <ul>
+              <li>Best value pricing</li>
+              <li>High-volume supply</li>
+              <li>Wholesale support available</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="wholesale-note">
+          <div>
+            <h3>Need more than 1000 cups?</h3>
+            <p>Contact us for custom wholesale pricing, recurring orders, and larger quantity availability.</p>
+          </div>
+
+          <a href="index.html#contact" class="btn">Request Wholesale Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cup-builder" class="builder-section">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>Design your cup mockup</h2>
+          <p>
+            Choose a cup size, upload a logo, add simple text, and adjust the placement directly on the cup preview.
+            When you are ready, send the details so our team can email you an example.
+          </p>
+        </div>
+
+        <div class="mockup-builder">
+          <div class="builder-panel">
+            <div class="form-row">
+              <label for="cupSize">Cup Size</label>
+              <select id="cupSize">
+                <option value="8 oz">8 oz</option>
+                <option value="12 oz" selected>12 oz</option>
+                <option value="16 oz">16 oz</option>
+                <option value="20 oz">20 oz</option>
+              </select>
+            </div>
+
+            <div class="builder-section-card">
+              <h3>Logo</h3>
+              <p class="section-note">Upload a logo and adjust where it sits on the cup.</p>
+
+              <div class="form-row">
+                <label for="logoUpload">Upload Logo</label>
+                <input id="logoUpload" type="file" accept="image/*" />
+                <p class="helper-text">PNG, JPG, or SVG works best. Your logo previews on the cup before sending.</p>
+              </div>
+
+              <div class="control-grid">
+                <div class="form-row">
+                  <label for="logoX">Left / Right</label>
+                  <input id="logoX" type="range" min="28" max="72" value="50" />
+                </div>
+
+                <div class="form-row">
+                  <label for="logoY">Up / Down</label>
+                  <input id="logoY" type="range" min="55" max="370" value="145" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="logoSize">Logo Size</label>
+                <input id="logoSize" type="range" min="45" max="240" value="130" />
+              </div>
+            </div>
+
+            <div class="builder-section-card">
+              <h3>Main Text</h3>
+              <p class="section-note">This is usually the business name or main cup headline.</p>
+
+              <div class="form-row">
+                <label for="brandName">Main Text</label>
+                <input id="brandName" type="text" value="PACIFIC PAPER CUPS" placeholder="Example: Luna Coffee" />
+              </div>
+
+              <div class="control-grid">
+                <div class="form-row">
+                  <label for="mainTextSize">Text Size</label>
+                  <input id="mainTextSize" type="range" min="18" max="44" value="28" />
+                </div>
+
+                <div class="form-row">
+                  <label for="letterSpacing">Letter Spacing</label>
+                  <input id="letterSpacing" type="range" min="0" max="8" value="2" />
+                </div>
+              </div>
+
+              <div class="control-grid">
+                <div class="form-row">
+                  <label for="mainTextX">Left / Right</label>
+                  <input id="mainTextX" type="range" min="28" max="72" value="50" />
+                </div>
+
+                <div class="form-row">
+                  <label for="mainTextY">Up / Down</label>
+                  <input id="mainTextY" type="range" min="60" max="360" value="190" />
+                </div>
+              </div>
+            </div>
+
+            <div class="builder-section-card">
+              <h3>Small Text</h3>
+              <p class="section-note">This can be a slogan, tagline, or short description.</p>
+
+              <div class="form-row">
+                <label for="sloganText">Small Text</label>
+                <input id="sloganText" type="text" value="local · fresh · sustainable" placeholder="Example: brewed fresh daily" />
+              </div>
+
+              <div class="control-grid">
+                <div class="form-row">
+                  <label for="smallTextSize">Text Size</label>
+                  <input id="smallTextSize" type="range" min="10" max="24" value="15" />
+                </div>
+
+                <div class="form-row">
+                  <label for="smallTextX">Left / Right</label>
+                  <input id="smallTextX" type="range" min="28" max="72" value="50" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="smallTextY">Up / Down</label>
+                <input id="smallTextY" type="range" min="70" max="380" value="238" />
+              </div>
+            </div>
+
+            <div class="builder-section-card">
+              <h3>Extra Text</h3>
+              <p class="section-note">Optional. Use this for another line like a website, phone number, or short note.</p>
+
+              <div class="form-row">
+                <label for="extraText">Extra Text Line</label>
+                <input id="extraText" type="text" placeholder="Example: www.yourbusiness.com" />
+              </div>
+
+              <div class="control-grid">
+                <div class="form-row">
+                  <label for="extraTextSize">Text Size</label>
+                  <input id="extraTextSize" type="range" min="9" max="22" value="13" />
+                </div>
+
+                <div class="form-row">
+                  <label for="extraTextColor">Text Color</label>
+                  <input id="extraTextColor" type="color" value="#073b73" />
+                </div>
+              </div>
+
+              <div class="control-grid">
+                <div class="form-row">
+                  <label for="extraTextX">Left / Right</label>
+                  <input id="extraTextX" type="range" min="28" max="72" value="50" />
+                </div>
+
+                <div class="form-row">
+                  <label for="extraTextY">Up / Down</label>
+                  <input id="extraTextY" type="range" min="80" max="390" value="285" />
+                </div>
+              </div>
+            </div>
+
+            <div class="builder-section-card">
+              <h3>General Style</h3>
+              <p class="section-note">Choose the font, text color, and quick layout preset.</p>
+
+              <div class="form-row">
+                <label for="designColor">Main Text Color</label>
+                <div class="color-picker-wrap">
+                  <input id="designColor" type="color" value="#1599d0" />
+                  <input id="colorCode" type="text" value="#1599d0" aria-label="Selected color code" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="fontChoice">Font Style</label>
+                <select id="fontChoice">
+                  <option value="Arial, Helvetica, sans-serif">Clean Sans</option>
+                  <option value="Arial Black, Arial, Helvetica, sans-serif">Bold Sans</option>
+                  <option value="Georgia, serif">Classic Serif</option>
+                  <option value="Trebuchet MS, sans-serif">Friendly Rounded</option>
+                  <option value="Verdana, Geneva, sans-serif">Simple Wide</option>
+                  <option value="Impact, Haettenschweiler, sans-serif">Poster Bold</option>
+                  <option value="Courier New, monospace">Modern Mono</option>
+                  <option value="Brush Script MT, cursive">Script Style</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="layoutPreset">Quick Layout</label>
+                <select id="layoutPreset">
+                  <option value="custom" selected>Custom</option>
+                  <option value="classic">Classic Stack</option>
+                  <option value="logo-center">Logo Center</option>
+                  <option value="logo-bottom">Logo Bottom</option>
+                  <option value="text-top">Text Top / Logo Middle</option>
+                  <option value="minimal">Minimal Center</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="customerEmail">Email for Example</label>
+              <input id="customerEmail" type="email" placeholder="name@example.com" />
+            </div>
+
+            <div class="form-row">
+              <label for="customerNotes">Design Notes</label>
+              <textarea id="customerNotes" placeholder="Example: Please place the logo in the middle, make the main text smaller, and put the slogan near the bottom."></textarea>
+              <p class="helper-text">Use this area for specific requests like logo placement, extra text lines, or colors for different parts of the design.</p>
+            </div>
+
+            <div class="form-row">
+              <label for="cupOrderQuantity">Cup Quantity</label>
+              <select id="cupOrderQuantity">
+                <option value="100 Cups" data-price="50">100 Cups - $50</option>
+                <option value="500 Cups" data-price="250">500 Cups - $250</option>
+                <option value="1000 Cups" data-price="350">1000 Cups - $350</option>
+              </select>
+            </div>
+
+            <button type="button" class="btn builder-btn" id="generateMockup">Update Preview</button>
+            <button type="button" class="btn builder-btn" id="addCupDesignToCart">Add Design to Cart</button>
+            <a href="mailto:info@pacificpapercups.com" class="btn secondary builder-email-btn" id="requestExample">Request Emailed Example</a>
+          </div>
+
+          <div class="preview-panel">
+            <div class="preview-heading">
+              <span>Live Mockup Preview</span>
+              <strong id="previewSize">12 oz</strong>
+            </div>
+
+            <div class="cup-preview-wrap">
+              <div class="mockup-cup" id="mockupCup">
+                <div class="mockup-rim"></div>
+                <div class="cup-design-text" id="cupDesignArea">
+                  <img id="cupLogoPreview" class="cup-logo-preview" alt="Uploaded logo preview">
+                  <span id="cupBrand">PACIFIC PAPER CUPS</span>
+                  <small id="cupKeywords">local · fresh · sustainable</small>
+                  <em id="cupExtraText"></em>
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-output">
+              <span>Live Preview Details</span>
+              <p id="aiPrompt">
+                Customize your cup with simple text, color, font, placement controls, and an optional logo upload.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>Custom cup examples</h2>
+          <p>Showcase your branding with clean, professional packaging customers remember.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <img src="images/cup-example-1.png" alt="Custom holiday cup example" class="gallery-image">
+            <h3>Holiday Event</h3>
+            <p>Custom coffee cups with clean logo placement and premium print quality.</p>
+          </div>
+
+          <div class="card">
+            <img src="images/cup-example-2.png" alt="Restaurant drink cup example" class="gallery-image">
+            <h3>Party Drink Cups</h3>
+            <p>Party beverage cups designed for events.</p>
+          </div>
+
+          <div class="card">
+            <img src="images/cup-example-3.png" alt="Event and catering cup example" class="gallery-image">
+            <h3>Event & Catering Cups</h3>
+            <p>Custom branded cups for events, catering businesses, pop-ups, and promotions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="section-inner">
+        <div class="cta-box">
+          <div>
+            <h2>Need custom paper cups for your business?</h2>
+            <p>Send us your logo, quantity, cup size, and delivery location to receive a custom quote.</p>
+          </div>
+
+          <div class="contact-card">
+            <strong>Request a Quote</strong>
+            <p>Fast local turnaround throughout Orange County.</p>
+            <a href="mailto:info@pacificpapercups.com" class="btn">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cupSize = document.getElementById("cupSize");
+      const brandName = document.getElementById("brandName");
+      const sloganText = document.getElementById("sloganText");
+      const fontChoice = document.getElementById("fontChoice");
+      const layoutPreset = document.getElementById("layoutPreset");
+      const previewSize = document.getElementById("previewSize");
+      const cupBrand = document.getElementById("cupBrand");
+      const cupKeywords = document.getElementById("cupKeywords");
+      const cupExtraText = document.getElementById("cupExtraText");
+      const mockupCup = document.getElementById("mockupCup");
+      const detailsText = document.getElementById("aiPrompt");
+      const updateButton = document.getElementById("generateMockup");
+      const designColor = document.getElementById("designColor");
+      const colorCode = document.getElementById("colorCode");
+      const logoUpload = document.getElementById("logoUpload");
+      const cupLogoPreview = document.getElementById("cupLogoPreview");
+      const customerEmail = document.getElementById("customerEmail");
+      const customerNotes = document.getElementById("customerNotes");
+      const requestExample = document.getElementById("requestExample");
+      const cupOrderQuantity = document.getElementById("cupOrderQuantity");
+      const addCupDesignToCart = document.getElementById("addCupDesignToCart");
+      const mainTextSize = document.getElementById("mainTextSize");
+      const smallTextSize = document.getElementById("smallTextSize");
+      const mainTextX = document.getElementById("mainTextX");
+      const mainTextY = document.getElementById("mainTextY");
+      const smallTextX = document.getElementById("smallTextX");
+      const smallTextY = document.getElementById("smallTextY");
+      const logoX = document.getElementById("logoX");
+      const logoY = document.getElementById("logoY");
+      const logoSize = document.getElementById("logoSize");
+      const letterSpacing = document.getElementById("letterSpacing");
+      const extraText = document.getElementById("extraText");
+      const extraTextSize = document.getElementById("extraTextSize");
+      const extraTextColor = document.getElementById("extraTextColor");
+      const extraTextX = document.getElementById("extraTextX");
+      const extraTextY = document.getElementById("extraTextY");
+
+      const presets = {
+        classic: {
+          mainTextX: 50,
+          mainTextY: 190,
+          smallTextX: 50,
+          smallTextY: 238,
+          logoX: 50,
+          logoY: 145
+        },
+        "logo-center": {
+          mainTextX: 50,
+          mainTextY: 130,
+          smallTextX: 50,
+          smallTextY: 260,
+          logoX: 50,
+          logoY: 190
+        },
+        "logo-bottom": {
+          mainTextX: 50,
+          mainTextY: 140,
+          smallTextX: 50,
+          smallTextY: 190,
+          logoX: 50,
+          logoY: 275
+        },
+        "text-top": {
+          mainTextX: 50,
+          mainTextY: 110,
+          smallTextX: 50,
+          smallTextY: 260,
+          logoX: 50,
+          logoY: 180
+        },
+        minimal: {
+          mainTextX: 50,
+          mainTextY: 205,
+          smallTextX: 50,
+          smallTextY: 255,
+          logoX: 50,
+          logoY: 145
+        }
+      };
+
+      function applyPreset() {
+        const preset = presets[layoutPreset.value];
+
+        if (!preset) {
+          return;
+        }
+
+        mainTextX.value = preset.mainTextX;
+        mainTextY.value = preset.mainTextY;
+        smallTextX.value = preset.smallTextX;
+        smallTextY.value = preset.smallTextY;
+        logoX.value = preset.logoX;
+        logoY.value = preset.logoY;
+      }
+
+      function updateMailLink() {
+        const size = cupSize.value;
+        const mainText = brandName.value.trim() || "YOUR LOGO";
+        const smallText = sloganText.value.trim() || "No small text";
+        const color = designColor.value;
+        const font = fontChoice.options[fontChoice.selectedIndex].text;
+        const email = customerEmail.value.trim();
+        const notes = customerNotes.value.trim() || "No extra notes provided";
+        const extra = extraText.value.trim() || "No extra text";
+        const quantity = cupOrderQuantity.value;
+
+        const subject = "Custom Cup Mockup Request";
+        const body = [
+          "Hello Pacific Paper Cups,",
+          "",
+          "I would like an example mockup for a custom paper cup.",
+          "",
+          "Cup size: " + size,
+          "Quantity: " + quantity,
+          "Main text: " + mainText,
+          "Small text: " + smallText,
+          "Extra text: " + extra,
+          "Color: " + color,
+          "Font style: " + font,
+          "Main text size: " + mainTextSize.value,
+          "Small text size: " + smallTextSize.value,
+          "Main text X: " + mainTextX.value,
+          "Main text Y: " + mainTextY.value,
+          "Small text X: " + smallTextX.value,
+          "Small text Y: " + smallTextY.value,
+          "Logo X: " + logoX.value,
+          "Logo Y: " + logoY.value,
+          "Logo size: " + logoSize.value,
+          "Customer email: " + (email || "Not provided"),
+          "Design notes: " + notes,
+          "",
+          "I will attach my logo file to this email.",
+          "",
+          "Thank you!"
+        ].join("\n");
+
+        requestExample.href = "mailto:info@pacificpapercups.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      }
+
+      function updatePreview() {
+        const selectedColor = designColor.value;
+        const mainText = brandName.value.trim() || "YOUR LOGO";
+        const smallText = sloganText.value.trim() || "custom · branded · local";
+        const extra = extraText.value.trim();
+        const font = fontChoice.value;
+
+        colorCode.value = selectedColor;
+        previewSize.textContent = cupSize.value;
+        cupBrand.textContent = mainText.toUpperCase();
+        cupKeywords.textContent = smallText.replaceAll(",", " · ");
+        cupExtraText.textContent = extra;
+        cupExtraText.style.display = extra.length > 0 ? "block" : "none";
+
+        cupBrand.style.color = selectedColor;
+        cupKeywords.style.color = selectedColor;
+        cupBrand.style.fontFamily = font;
+        cupKeywords.style.fontFamily = font;
+        cupBrand.style.fontSize = mainTextSize.value + "px";
+        cupKeywords.style.fontSize = smallTextSize.value + "px";
+        cupBrand.style.left = mainTextX.value + "%";
+        cupBrand.style.top = mainTextY.value + "px";
+        cupKeywords.style.left = smallTextX.value + "%";
+        cupKeywords.style.top = smallTextY.value + "px";
+        cupLogoPreview.style.left = logoX.value + "%";
+        cupLogoPreview.style.top = logoY.value + "px";
+        cupLogoPreview.style.width = logoSize.value + "px";
+        cupLogoPreview.style.maxHeight = Math.round(Number(logoSize.value) * 0.9) + "px";
+        cupBrand.style.letterSpacing = letterSpacing.value + "px";
+        cupExtraText.style.color = extraTextColor.value;
+        cupExtraText.style.fontFamily = font;
+        cupExtraText.style.fontSize = extraTextSize.value + "px";
+        cupExtraText.style.left = extraTextX.value + "%";
+        cupExtraText.style.top = extraTextY.value + "px";
+
+        detailsText.textContent = "Preview updated: " + cupSize.value + " white cup with adjustable text and logo placement.";
+        updateMailLink();
+      }
+
+      logoUpload.addEventListener("change", function () {
+        const file = logoUpload.files[0];
+
+        if (!file) {
+          cupLogoPreview.classList.remove("show");
+          cupLogoPreview.removeAttribute("src");
+          updatePreview();
+          return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+          cupLogoPreview.src = event.target.result;
+          cupLogoPreview.classList.add("show");
+          updatePreview();
+        };
+
+        reader.readAsDataURL(file);
+      });
+
+      layoutPreset.addEventListener("change", function () {
+        applyPreset();
+        updatePreview();
+      });
+
+      [
+        cupSize,
+        cupOrderQuantity,
+        brandName,
+        sloganText,
+        fontChoice,
+        designColor,
+        colorCode,
+        customerEmail,
+        customerNotes,
+        mainTextSize,
+        smallTextSize,
+        mainTextX,
+        mainTextY,
+        smallTextX,
+        smallTextY,
+        logoX,
+        logoY,
+        logoSize,
+        letterSpacing,
+        extraText,
+        extraTextSize,
+        extraTextColor,
+        extraTextX,
+        extraTextY
+      ].forEach(function (field) {
+        field.addEventListener("input", updatePreview);
+        field.addEventListener("change", updatePreview);
+      });
+
+      colorCode.addEventListener("input", function () {
+        if (colorCode.value.startsWith("#") && colorCode.value.length === 7) {
+          designColor.value = colorCode.value;
+          updatePreview();
+        }
+      });
+
+      function addCurrentDesignToCart() {
+        const selectedOption = cupOrderQuantity.options[cupOrderQuantity.selectedIndex];
+        const quantity = selectedOption.value;
+        const price = Number(selectedOption.dataset.price);
+        const savedCart = JSON.parse(localStorage.getItem("ppcCart")) || [];
+        const hasLogo = cupLogoPreview.classList.contains("show") ? "Logo uploaded" : "No logo uploaded";
+
+        savedCart.push({
+          name: quantity + " - Custom Paper Cups",
+          quantity: quantity,
+          boxType: "Custom Paper Cups",
+          price: price,
+          designDetails: {
+            cupSize: cupSize.value,
+            mainText: brandName.value.trim() || "YOUR LOGO",
+            smallText: sloganText.value.trim() || "No small text",
+            extraText: extraText.value.trim() || "No extra text",
+            color: designColor.value,
+            font: fontChoice.options[fontChoice.selectedIndex].text,
+            logo: hasLogo,
+            notes: customerNotes.value.trim() || "No notes provided"
+          }
+        });
+
+        localStorage.setItem("ppcCart", JSON.stringify(savedCart));
+        updateNavCartCount();
+
+        addCupDesignToCart.textContent = "Added to Cart!";
+        setTimeout(function () {
+          addCupDesignToCart.textContent = "Add Design to Cart";
+        }, 1000);
+      }
+
+      addCupDesignToCart.addEventListener("click", addCurrentDesignToCart);
+
+      function updateNavCartCount() {
+        const cart = JSON.parse(localStorage.getItem("ppcCart")) || [];
+        const count = cart.length;
+
+        document.querySelectorAll(".cart-count").forEach(function (badge) {
+          badge.textContent = count;
+          badge.style.display = count > 0 ? "inline-grid" : "none";
+        });
+      }
+
+      updateButton.addEventListener("click", function () {
+        updatePreview();
+        mockupCup.classList.remove("mockup-pop");
+        void mockupCup.offsetWidth;
+        mockupCup.classList.add("mockup-pop");
+      });
+
+      updatePreview();
+      updateNavCartCount();
+    });
+  </script>
+</body>
+</html>

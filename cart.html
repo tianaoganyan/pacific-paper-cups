@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Pacific Paper Cups</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a href="index.html" class="logo" aria-label="Pacific Paper Cups home">
+        <img src="images/pacific-paper-cups-logo.png" alt="Pacific Paper Cups Logo" class="logo-image">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="index.html#products" class="nav-drop-trigger">Products</a>
+          <div class="nav-drop-menu">
+            <a href="custom-paper-cups.html">Custom Paper Cups</a>
+            <a href="to-go-boxes.html">To-Go Boxes</a>
+          </div>
+        </div>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#process">Process</a>
+        <a href="cart.html" class="cart-nav-link">Cart <span class="cart-count">0</span></a>
+        <a href="index.html#contact" class="btn">Get a Quote</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cart-page-section">
+      <div class="section-inner">
+        <div class="section-title">
+          <span class="eyebrow">Order request</span>
+          <h1>Your Cart</h1>
+          <p>
+            Review your selected to-go box quantities. This checkout sends an order request by email,
+            so our team can confirm availability, pickup or delivery, and next steps.
+          </p>
+        </div>
+
+        <div class="cart-page-layout">
+          <div class="cart-list-card">
+            <h2>Selected Items</h2>
+            <div id="cartItems" class="cart-items-list"></div>
+          </div>
+
+          <aside class="cart-summary-card">
+            <span class="eyebrow">Summary</span>
+            <h2>Order Total</h2>
+            <strong id="cartPageTotal">$0</strong>
+            <p id="cartPageCount">No items added yet.</p>
+
+            <div class="cart-form">
+              <div class="form-row">
+                <label for="cartName">Name</label>
+                <input id="cartName" type="text" placeholder="Your name" />
+              </div>
+
+              <div class="form-row">
+                <label for="cartEmail">Email</label>
+                <input id="cartEmail" type="email" placeholder="name@example.com" />
+              </div>
+
+              <div class="form-row">
+                <label for="cartDelivery">Pickup or Delivery?</label>
+                <select id="cartDelivery">
+                  <option value="Pickup">Pickup</option>
+                  <option value="Delivery">Delivery</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="cartNotes">Order Notes</label>
+                <textarea id="cartNotes" placeholder="Example: I need these for a restaurant in Irvine. Please send availability and delivery options."></textarea>
+              </div>
+            </div>
+
+            <div class="cart-page-actions">
+              <button type="button" class="btn secondary" id="clearCartPage">Clear Cart</button>
+              <a href="mailto:info@pacificpapercups.com" class="btn" id="cartCheckoutEmail">Send Order Request</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const cartItems = document.getElementById("cartItems");
+    const cartPageTotal = document.getElementById("cartPageTotal");
+    const cartPageCount = document.getElementById("cartPageCount");
+    const clearCartPage = document.getElementById("clearCartPage");
+    const cartCheckoutEmail = document.getElementById("cartCheckoutEmail");
+    const cartName = document.getElementById("cartName");
+    const cartEmail = document.getElementById("cartEmail");
+    const cartDelivery = document.getElementById("cartDelivery");
+    const cartNotes = document.getElementById("cartNotes");
+
+    let cart = JSON.parse(localStorage.getItem("ppcCart")) || [];
+
+    function saveCart() {
+      localStorage.setItem("ppcCart", JSON.stringify(cart));
+    }
+
+    function updateNavCartCount() {
+      const count = cart.length;
+
+      document.querySelectorAll(".cart-count").forEach(function (badge) {
+        badge.textContent = count;
+        badge.style.display = count > 0 ? "inline-grid" : "none";
+      });
+    }
+
+    function renderCart() {
+      cartItems.innerHTML = "";
+      updateNavCartCount();
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="empty-cart-message">
+            <h3>Your cart is empty.</h3>
+            <p>Add to-go boxes from the pricing section to start an order request.</p>
+            <a href="to-go-boxes.html#pricing" class="btn">View Box Pricing</a>
+          </div>
+        `;
+
+        cartPageTotal.textContent = "$0";
+        cartPageCount.textContent = "No items added yet.";
+        cartCheckoutEmail.href = "mailto:info@pacificpapercups.com";
+        return;
+      }
+
+      const groupedItems = cart.reduce(function (groups, item) {
+        if (!groups[item.name]) {
+          groups[item.name] = {
+            name: item.name,
+            price: item.price,
+            quantity: 0
+          };
+        }
+
+        groups[item.name].quantity += 1;
+        return groups;
+      }, {});
+
+      Object.values(groupedItems).forEach(function (item) {
+        const row = document.createElement("div");
+        row.className = "cart-item-row";
+
+        const details = item.designDetails
+          ? `
+            <div class="cart-design-details">
+              <span>Cup size: ${item.designDetails.cupSize}</span>
+              <span>Main text: ${item.designDetails.mainText}</span>
+              <span>Small text: ${item.designDetails.smallText}</span>
+              <span>Extra text: ${item.designDetails.extraText}</span>
+              <span>Color: ${item.designDetails.color}</span>
+              <span>${item.designDetails.logo}</span>
+              <span>Notes: ${item.designDetails.notes}</span>
+            </div>
+          `
+          : "";
+
+        row.innerHTML = `
+          <div>
+            <h3>${item.name}</h3>
+            <p>$${item.price} each</p>
+            ${details}
+          </div>
+
+          <div class="cart-item-meta">
+            <span>Qty ${item.quantity}</span>
+            <strong>$${item.price * item.quantity}</strong>
+          </div>
+        `;
+
+        cartItems.appendChild(row);
+      });
+
+      const total = cart.reduce(function (sum, item) {
+        return sum + item.price;
+      }, 0);
+
+      cartPageTotal.textContent = "$" + total;
+      cartPageCount.textContent = cart.length + " item" + (cart.length === 1 ? "" : "s") + " selected";
+      updateEmailLink();
+    }
+
+    function updateEmailLink() {
+      const total = cart.reduce(function (sum, item) {
+        return sum + item.price;
+      }, 0);
+
+      const orderLines = cart.map(function (item) {
+        if (item.designDetails) {
+          return [
+            "- " + item.name + " ($" + item.price + ")",
+            "  Cup size: " + item.designDetails.cupSize,
+            "  Main text: " + item.designDetails.mainText,
+            "  Small text: " + item.designDetails.smallText,
+            "  Extra text: " + item.designDetails.extraText,
+            "  Color: " + item.designDetails.color,
+            "  Logo: " + item.designDetails.logo,
+            "  Notes: " + item.designDetails.notes
+          ].join("\n");
+        }
+
+        return "- " + item.name + " ($" + item.price + ")";
+      }).join("\n");
+
+      const subject = "To-Go Box Order Request";
+      const body = [
+        "Hello Pacific Paper Cups,",
+        "",
+        "I would like to request the following to-go box order:",
+        "",
+        orderLines || "No items selected.",
+        "",
+        "Estimated total: $" + total,
+        "Name: " + (cartName.value.trim() || "Not provided"),
+        "Email: " + (cartEmail.value.trim() || "Not provided"),
+        "Pickup/Delivery: " + cartDelivery.value,
+        "Notes: " + (cartNotes.value.trim() || "No notes provided"),
+        "",
+        "Please contact me with availability, pickup or delivery options, and next steps.",
+        "",
+        "Thank you!"
+      ].join("\n");
+
+      cartCheckoutEmail.href = "mailto:info@pacificpapercups.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
+    clearCartPage.addEventListener("click", function () {
+      cart = [];
+      localStorage.removeItem("ppcCart");
+      renderCart();
+    });
+
+    [cartName, cartEmail, cartDelivery, cartNotes].forEach(function (field) {
+      field.addEventListener("input", updateEmailLink);
+      field.addEventListener("change", updateEmailLink);
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>
